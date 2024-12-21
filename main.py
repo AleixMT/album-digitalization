@@ -11,7 +11,7 @@ def extract_photos_from_page(image_path, output_folder):
     _, thresh = cv2.threshold(gray, GREY_LEVEL_MIN, GREY_LEVEL_MAX, cv2.THRESH_BINARY_INV)
 
     # Detectar contornos
-    contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours, _ = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
 
     # Asegurarse de que el nombre de la carpeta sea el nombre del archivo
     base_name = os.path.splitext(os.path.basename(image_path))[0]

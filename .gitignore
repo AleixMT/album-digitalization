@@ -176,3 +176,6 @@ cython_debug/
 pages
 pages/*pages2
 pages2/
+album2
+album2_raws/
+output_images/
