@@ -174,4 +174,5 @@ cython_debug/
 
 # own gitignore rules
 pages
-pages/*
+pages/*pages2
+pages2/

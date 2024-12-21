@@ -8,7 +8,7 @@ def extract_photos_from_page(image_path, output_folder):
     # Leer la imagen
     image = cv2.imread(image_path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    _, thresh = cv2.threshold(gray, GREY_LEVEL_MIN, 255, cv2.THRESH_BINARY_INV)
+    _, thresh = cv2.threshold(gray, GREY_LEVEL_MIN, GREY_LEVEL_MAX, cv2.THRESH_BINARY_INV)
 
     # Detectar contornos
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -27,10 +27,10 @@ def extract_photos_from_page(image_path, output_folder):
             cv2.imwrite(output_path, cropped)
 
 
-GREY_LEVEL_MIN = 200
+GREY_LEVEL_MIN = 150
 GREY_LEVEL_MAX = 255
-WIDTH_MIN = 1000
-HEIGHT_MIN = 1000
+WIDTH_MIN = 400
+HEIGHT_MIN = 400
 
 # Rutas de entrada y salida
 input_folder = "pages"  # Carpeta con las imágenes TIFF
